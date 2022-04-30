@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <style type="text/css">
+        .item {
+            width: 150px;
+            height: 150px;
+            background-size:100%;
+            background-repeat: no-repeat;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            height: 200px;
+            width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .border {
+            border: 5px solid yellow;
+            border-radius: 10%;
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+    </div>
+    <script type="text/javascript">
+    //див-родитель
+    let row = document.querySelector(".row");
+
+    let random = function(arg) {
+			let random = Math.random() * arg;
+			let round = Math.round(random);
+			return round
+		}
+
+    //хранение картинок
+    let images = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png", "1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
+
+    let check = 0;
+    let check2 = 0;
+    let check3 = 0;
+    let check4 = 0;
+    let check5 = 0;
+    let check6 = 0;
+
+    for(let i=0; i<12; i++) {
+    	let num = random(images.length-1)
+    	let box = document.createElement('div');
+		row.appendChild(box);
+		box.classList.add("item");
+
+        box.name = images[num];
+
+		box.style.backgroundImage = "url(" + images[num] + ")";
+		images.splice(num, 1)
+
+        box.onclick = function() {
+
+            if(box.name == "1.png"){
+                box.onclick = null;
+                box.classList.add("border");
+                box.classList.add("target1");
+                check = check + 1;
+                console.log(check)
+                if(check == 2) {
+                    // box.style.opacity = 0;
+                    document.querySelectorAll(".target1")[0].style.opacity = 0;
+                    document.querySelectorAll(".target1")[1].style.opacity = 0;
+                }
+            }
+
+            if(box.name == "2.png"){
+                box.onclick = null;
+                box.classList.add("border");
+                box.classList.add("target2");
+                check2 = check2 + 1;
+                console.log(check2)
+                if(check2 == 2) {
+                    // box.style.opacity = 0;
+                    document.querySelectorAll(".target2")[0].style.opacity = 0;
+                    document.querySelectorAll(".target2")[1].style.opacity = 0;
+                }
+            }
+            if(box.name == "3.png"){
+                box.onclick = null;
+                box.classList.add("border");
+                box.classList.add("target3");
+                check3 = check3 + 1;
+                console.log(check2)
+                if(check3 == 2) {
+                    // box.style.opacity = 0;
+                    document.querySelectorAll(".target3")[0].style.opacity = 0;
+                    document.querySelectorAll(".target3")[1].style.opacity = 0;
+                }
+            }
+            if(box.name == "4.png"){
+                box.onclick = null;
+                box.classList.add("border");
+                box.classList.add("target4");
+                check4 = check4 + 1;
+                console.log(check4)
+                if(check4 == 2) {
+                    // box.style.opacity = 0;
+                    document.querySelectorAll(".target4")[0].style.opacity = 0;
+                    document.querySelectorAll(".target4")[1].style.opacity = 0;
+                }
+            }
+            if(box.name == "5.png"){
+                box.onclick = null;
+                box.classList.add("border");
+                box.classList.add("target5");
+                check5 = check5 + 1;
+                console.log(check5)
+                if(check5 == 2) {
+                    // box.style.opacity = 0;
+                    document.querySelectorAll(".target5")[0].style.opacity = 0;
+                    document.querySelectorAll(".target5")[1].style.opacity = 0;
+                }
+            }
+            if(box.name == "6.png"){
+                box.onclick = null;
+                box.classList.add("border");
+                box.classList.add("target6");
+                check6 = check6 + 1;
+                console.log(check2)
+                if(check6 == 2) {
+                    // box.style.opacity = 0;
+                    document.querySelectorAll(".target6")[0].style.opacity = 0;
+                    document.querySelectorAll(".target6")[1].style.opacity = 0;
+                }
+            }
+        }
+    }
+            
+   
+	
+    </script>
+</body>
+</html>
